@@ -15,7 +15,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import closeIcon from '../../assets/images/xmark.svg';
 
-export default function FeedbackForm(isDialogOpen, handleDialogClose) {
+export default function FeedbackForm(props) {
     const {
         register,
         handleSubmit,
@@ -24,12 +24,16 @@ export default function FeedbackForm(isDialogOpen, handleDialogClose) {
     // eslint-disable-next-line no-console
     const onSubmit = (data) => console.log(data);
 
+    const onClose = () => {
+        props.handleDialog();
+    };
+
     return (
-        <Dialog open={isDialogOpen} className="feedback-dialog">
+        <Dialog open={props.isDialogOpen} className="feedback-dialog">
             <DialogTitle className="alert-dialog-title">
                 <span>Feedback Form</span>
                 {/* Close doesn't work */}
-                <Button className="close-btn icon-btn" aria-label="close" onClick={() => handleDialogClose}>
+                <Button className="close-btn icon-btn" aria-label="close" onClick={onClose}>
                     <img alt="Close" src={closeIcon} className="close-trigger" />
                 </Button>
             </DialogTitle>
