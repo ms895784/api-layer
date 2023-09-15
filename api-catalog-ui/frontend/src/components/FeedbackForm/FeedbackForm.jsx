@@ -7,14 +7,11 @@
  *
  * Copyright Contributors to the Zowe Project.
  */
-import React, { Component } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { isAPIPortal } from '../../utils/utilFunctions';
 import './FeedbackForm.scss';
 
 export default function FeedbackForm(isDialogOpen, handleDialog) {
